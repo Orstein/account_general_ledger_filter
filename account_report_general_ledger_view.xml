@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_report_general_ledger_accounts_view" model="ir.ui.view">
+        <field name="model">account.report.general.ledger</field>
+        <field name="inherit_id" ref="account.account_report_general_ledger_view"/>
+        <field name="arch" type="xml">
+        <data>
+					<xpath expr="//field[@name='journal_ids']" position="after">
+						<newline/>
+						<field name="account_ids" widget="many2many_tags" options="{'no_create': True}"/>
+					</xpath>
+        </data>
+        </field>
+    </record>
+
+</odoo>
